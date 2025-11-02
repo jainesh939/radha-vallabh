@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radha Vallabh Jewellers - Timeless Elegance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --light-gold: #F4E5C2;
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --gray: #666666;
+            --light-gray: #F8F8F8;
+            --white: #FFFFFF;
+            --accent: #8B7355;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        header {
+            background: var(--black);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin-top: 70px;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* Decorative Elements */
+        .hero-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: var(--light-gray);
+        }
+
+        .founder-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .founder-portrait {
+            position: relative;
+        }
+
+        .portrait-frame {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .portrait-inner {
+            width: 360px;
+            height: 360px;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portrait-initials {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .founder-info h3 {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .founder-title {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .founder-bio {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-quote {
+            font-style: italic;
+            color: var(--accent);
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        /* Offers Section */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .offer-card {
+            background: var(--white);
+            border: 1px solid #E5E5E5;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .offer-visual {
+            height: 250px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jewelry-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .pattern-1 {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--gold),
+                var(--gold) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+
+        .pattern-2 {
+            background: radial-gradient(circle, var(--gold) 20%, transparent 20%),
+                        radial-gradient(circle, var(--gold) 20%, transparent 20%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .pattern-3 {
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold),
+                var(--gold) 2px,
+                transparent 2px,
+                transparent 10px
+            ),
+                        repeating-linear-gradient(
+                0deg,
+                var(--gold),
+                var(--gold) 2px,
+                transparent 2px,
+                transparent 10px
+            );
+        }
+
+        .jewelry-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            z-index: 1;
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .offer-content {
+            padding: 2rem;
+        }
+
+        .offer-content h3 {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-price {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--light-gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--black);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--gold);
+            margin-top: 0.5rem;
+        }
+
+        /* Location */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 2rem;
+        }
+
+        .location-details {
+            margin-bottom: 2rem;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-item i {
+            color: var(--gold);
+            width: 20px;
+            margin-top: 3px;
+        }
+
+        .location-item p {
+            color: var(--gray);
+        }
+
+        .map-container {
+            height: 400px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #E5E5E5;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .direction-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .direction-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--black);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 3rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .founder-container,
+            .location-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .founder-portrait {
+                margin: 0 auto;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L2 8L12 22L22 8L18 2H6M8.5 4H15.5L18 7.5L12 17.5L6 7.5L8.5 4Z"/>
+                </svg>
+                Radha Vallabh Jewellers
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-decoration decoration-1"></div>
+        <div class="hero-decoration decoration-2"></div>
+        <div class="hero-content">
+            <h1>Timeless Elegance</h1>
+            <p>Crafting memories in gold and precious stones since 1980</p>
+            <div class="hero-buttons">
+                <a href="#offers" class="btn-primary">Explore Collection</a>
+                <a href="#location" class="btn-secondary">Visit Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Legacy</h2>
+            <p class="section-subtitle">Four decades of excellence in jewelry craftsmanship</p>
+        </div>
+        <div class="founder-container">
+            <div class="founder-portrait">
+                <div class="portrait-frame">
+                    <div class="portrait-inner">
+                        <div class="portrait-initials">RVS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="founder-info">
+                <h3>Shri Radha Vallabh Sharma</h3>
+                <p class="founder-title">Founder & Master Craftsman</p>
+                <p class="founder-bio">
+                    Established in 1980, Radha Vallabh Jewellers began as a small workshop in the heart of Varanasi's jewelry market. With unwavering commitment to quality and authenticity, we have grown into a trusted name for fine jewelry.
+                </p>
+                <p class="founder-bio">
+                    Our founder's vision was simple yet profound - to create jewelry that not only adorns but also tells a story. Each piece in our collection reflects this philosophy, blending traditional techniques with contemporary design sensibilities.
+                </p>
+                <div class="founder-quote">
+                    "Jewelry is the most personal form of art. It carries emotions, celebrates milestones, and becomes a part of one's legacy."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers">
+        <div class="section-header">
+            <h2 class="section-title">Featured Collections</h2>
+            <p class="section-subtitle">Handpicked pieces from our exclusive collections</p>
+        </div>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <div class="offer-visual">
+                    <div class="jewelry-pattern pattern-1"></div>
+                    <i class="fas fa-gem jewelry-icon"></i>
+                </div>
+                <div class="offer-badge">BESTSELLER</div>
+                <div class="offer-content">
+                    <h3>Heritage Necklace</h3>
+                    <p>Traditional Kundan work with uncut diamonds, inspired by Banarasi royalty</p>
+                    <div class="offer-price">
+                        ₹2,85,000
+                        <span class="original-price">₹3,50,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-visual">
+                    <div class="jewelry-pattern pattern-2"></div>
+                    <i class="fas fa-ring jewelry-icon"></i>
+                </div>
+                <div class="offer-badge">NEW ARRIVAL</div>
+                <div class="offer-content">
+                    <h3>Eternity Ring</h3>
+                    <p>18K gold with brilliant cut diamonds, perfect for your forever promise</p>
+                    <div class="offer-price">₹1,25,000</div>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-visual">
+                    <div class="jewelry-pattern pattern-3"></div>
+                    <i class="fas fa-gem jewelry-icon"></i>
+                </div>
+                <div class="offer-badge">LIMITED EDITION</div>
+                <div class="offer-content">
+                    <h3>Banarasi Jhumkas</h3>
+                    <p>Antique finish gold earrings with pearl and emerald accents</p>
+                    <div class="offer-price">
+                        ₹95,000
+                        <span class="original-price">₹1,20,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-header">
+            <h2 class="section-title">Client Stories</h2>
+            <p class="section-subtitle">Hear from our valued customers</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The attention to detail and craftsmanship at Radha Vallabh Jewellers is unmatched. My wedding jewelry was exactly what I had dreamed of - elegant, timeless, and absolutely stunning."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div class="author-info">
+                        <h4>Ananya Kapoor</h4>
+                        <p>Wedding Collection</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "I've been purchasing from Radha Vallabh for over 15 years. Their transparency in pricing and quality of gold is exceptional. It's not just jewelry, it's an investment."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RS</div>
+                    <div class="author-info">
+                        <h4>Rajat Singh</h4>
+                        <p>Regular Customer</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The custom design service exceeded my expectations. They transformed my vision into a beautiful piece of jewelry that I will cherish forever. Truly professional and artistic team."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PM</div>
+                    <div class="author-info">
+                        <h4>Priya Mehra</h4>
+                        <p>Custom Design</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <div class="section-header">
+            <h2 class="section-title">Visit Our Showroom</h2>
+            <p class="section-subtitle">Experience our collection in person</p>
+        </div>
+        <div class="location-container">
+            <div class="location-info">
+                <h3>Radha Vallabh Jewellers</h3>
+                <div class="location-details">
+                    <div class="location-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Dehati Chulha Restaurant, Sindhora Road<br>Ke Pass, Bhojubeer, Natiniyadai<br>Varanasi, Uttar Pradesh - 221002</p>
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 79056 30603</p>
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@radhavallabhjewellers.com</p>
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <p style="color: var(--gray); margin-top: 2rem;">
+                    Step into our world of exquisite jewelry where tradition meets contemporary design. Our expert consultants are here to guide you in finding the perfect piece for every occasion.
+                </p>
+            </div>
+            <div class="map-container">
+                <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9496426887445!2d82.890563!3d25.3696802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db30493a21f:0x428e3853de941d43!2sdehati+chulha+restaurant!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                <a href="https://www.google.com/maps/dir//dehati+chulha+restaurant,+Sindhora+road,+Ke+Pass,+Bhojubeer,+Natiniyadai,+Varanasi,+Uttar+Pradesh+221002/@25.3696802,82.890563,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x398e2db30493a21f:0x428e3853de941d43!2m2!1d82.9729645!2d25.3697031?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="direction-btn">
+                    <i class="fas fa-directions"></i>
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Radha Vallabh</h3>
+                <p>For over four decades, we have been crafting fine jewelry with passion and precision. Our commitment to quality and customer satisfaction remains unwavering.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#offers">Collections</a></p>
+                <p><a href="#testimonials">Testimonials</a></p>
+                <p><a href="#location">Visit Us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> +91 79056 30603</p>
+                <p><i class="fas fa-envelope"></i> info@radhavallabhjewellers.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Varanasi, Uttar Pradesh</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Stay updated with our latest collections</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Radha Vallabh Jewellers. All rights reserved. | Crafted with excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--black)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
